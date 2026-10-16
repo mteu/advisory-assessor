@@ -1,0 +1,39 @@
+parameters:
+	paths:
+		- ../../src
+		- ../../tests/Unit
+	level: max
+	reportNonIntStringArrayKey: true
+	treatPhpDocTypesAsCertain: false
+
+	ergebnis:
+		noExtends:
+			classesAllowedToBeExtended:
+				- Exception
+
+	ignoreErrors:
+		# Assessment takes ten parameters. Positional calls are unreadable and
+		# would accept a reordering without complaint.
+		- identifier: ergebnis.noNamedArgument
+		# Justification, response, accepted severity and expiry exist for some
+		# statuses only, and no zero value could mean "absent". Scoped to the
+		# assessment and its builder, not library-wide.
+		-
+			identifier: ergebnis.noConstructorParameterWithDefaultValue
+			path: ../../src/Assessment/Assessment.php
+		-
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			path: ../../src/Assessment/Assessment.php
+		-
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			path: ../../src/Assessment/Assessment.php
+		-
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			path: ../../tests/Unit/Assessment/*
+		# A lifetime of null means "never expires".
+		-
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			path: ../../src/CycloneDx/CycloneDxVexReader.php
+		-
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			path: ../../tests/Unit/Assessment/*

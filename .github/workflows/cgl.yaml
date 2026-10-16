@@ -1,0 +1,53 @@
+name: CGL
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '**'
+
+permissions:
+  contents: read
+
+jobs:
+  cgl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@d52fc211a0436f8839a587b3b5b8efddab4744ea # v2
+        with:
+          php-version: 8.5
+          tools: composer:v2
+          coverage: none
+
+      - name: Validate composer.json
+        run: composer validate --no-check-lock
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@a8d0d959dab41457692a5e2041bd9b757a119e3f # 3.2.1
+
+      - name: Audit dependencies
+        run: composer audit
+
+      - name: Analyze dependencies
+        run: composer check:deps
+
+      - name: Lint composer.json
+        run: composer check:style:composer
+
+      - name: Lint .editorconfig
+        run: composer check:style:editorconfig
+
+      - name: Lint PHP
+        run: composer check:style:php
+
+      - name: SCA PHP
+        run: composer check:static -- --error-format github
+
+      - name: Migration
+        run: composer check:refactor

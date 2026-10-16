@@ -1,0 +1,120 @@
+{
+	"name": "mteu/advisory-assessor",
+	"description": "PHP library for recording triage decisions on security advisory findings as VEX statements",
+	"license": "MIT",
+	"type": "library",
+	"keywords": [
+		"security",
+		"vex",
+		"vulnerability",
+		"advisory",
+		"cyclonedx",
+		"sbom"
+	],
+	"authors": [
+		{
+			"name": "Martin Adler",
+			"email": "mteu@mailbox.org"
+		}
+	],
+	"homepage": "https://github.com/mteu/advisory-assessor",
+	"support": {
+		"issues": "https://github.com/mteu/advisory-assessor/issues",
+		"source": "https://github.com/mteu/advisory-assessor",
+		"security": "https://github.com/mteu/advisory-assessor/security/policy"
+	},
+	"require": {
+		"php": "~8.3.0 || ~8.4.0 || ~8.5.0",
+		"mteu/advisory-matcher": "^0.2",
+		"mteu/sbom-parser": "^0.6",
+		"psr/clock": "^1.0"
+	},
+	"require-dev": {
+		"armin/editorconfig-cli": "2.2.1",
+		"ergebnis/composer-normalize": "2.52.0",
+		"ergebnis/phpstan-rules": "2.13.1",
+		"friendsofphp/php-cs-fixer": "3.95.2",
+		"infection/infection": "0.35.5",
+		"justinrainbow/json-schema": "^6.8",
+		"phpstan/extension-installer": "1.4.3",
+		"phpstan/phpstan": "2.2.1",
+		"phpstan/phpstan-deprecation-rules": "2.0.4",
+		"phpstan/phpstan-strict-rules": "2.0.11",
+		"phpunit/phpunit": "^11.5 || ^12.1",
+		"rector/rector": "2.4.1",
+		"roave/security-advisories": "dev-latest",
+		"shipmonk/composer-dependency-analyser": "1.8.4",
+		"shipmonk/phpstan-rules": "4.4.0",
+		"spaze/phpstan-disallowed-calls": "4.12.0",
+		"symplify/phpstan-rules": "14.10.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"mteu\\AdvisoryAssessor\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"mteu\\AdvisoryAssessor\\Tests\\": "tests/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"ergebnis/composer-normalize": true,
+			"infection/extension-installer": true,
+			"phpstan/extension-installer": true
+		},
+		"lock": true,
+		"sort-packages": true
+	},
+	"scripts": {
+		"check": [
+			"@check:deps",
+			"@check:refactor",
+			"@check:static",
+			"@check:style"
+		],
+		"check:deps": "composer-dependency-analyser --config build/checks/composer-dependency-analyser.php",
+		"check:refactor": [
+			"@check:refactor:php"
+		],
+		"check:refactor:php": "@refactor:php --dry-run",
+		"check:static": "phpstan analyse -c build/checks/phpstan.neon --memory-limit=4G",
+		"check:style": [
+			"@check:style:composer",
+			"@check:style:editorconfig",
+			"@check:style:php"
+		],
+		"check:style:composer": "@fix:composer --dry-run",
+		"check:style:editorconfig": "ec",
+		"check:style:php": "@fix:php --dry-run --diff",
+		"ci": [
+			"@composer validate",
+			"@composer audit",
+			"@check",
+			"@test"
+		],
+		"fix": [
+			"@fix:composer",
+			"@fix:editorconfig",
+			"@fix:php"
+		],
+		"fix:composer": "@composer normalize",
+		"fix:editorconfig": "@check:style:editorconfig --fix",
+		"fix:php": "php-cs-fixer fix --config build/checks/.php-cs-fixer.php",
+		"refactor": [
+			"@refactor:php"
+		],
+		"refactor:php": "rector process -c build/checks/rector.php",
+		"test": [
+			"@test:unit"
+		],
+		"test:coverage": [
+			"@test:unit:coverage"
+		],
+		"test:mutation": "infection -c build/tests/infection.json5 --threads=max",
+		"test:mutation:diff": "@test:mutation --git-diff-lines --git-diff-base=origin/main",
+		"test:unit": "@test:unit:coverage --no-coverage",
+		"test:unit:coverage": "phpunit -c build/tests/phpunit.xml"
+	}
+}

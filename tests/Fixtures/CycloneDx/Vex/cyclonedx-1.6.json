@@ -1,0 +1,164 @@
+{
+	"bomFormat": "CycloneDX",
+	"specVersion": "1.6",
+	"version": 3,
+	"metadata": {
+		"timestamp": "2026-10-05T09:00:00Z"
+	},
+	"components": [
+		{
+			"type": "library",
+			"bom-ref": "pkg:composer/symfony/http-kernel@5.4.19",
+			"group": "symfony",
+			"name": "http-kernel",
+			"version": "5.4.19",
+			"purl": "pkg:composer/symfony/http-kernel@5.4.19",
+			"components": [
+				{
+					"type": "library",
+					"bom-ref": "psr7",
+					"group": "guzzlehttp",
+					"name": "psr7",
+					"version": "2.4.1",
+					"purl": "pkg:composer/guzzlehttp/psr7@2.4.1?repository_url=https%3A%2F%2Frepo.packagist.org"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2026-0001",
+			"description": "Listed as in an SBOM, without an analysis.",
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "CVE-2026-0002",
+			"analysis": {
+				"detail": "An analysis that states nothing."
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "cve-2026-0003",
+			"references": [
+				{
+					"id": "GHSA-wxyz-0003-mnop",
+					"source": {
+						"name": "GitHub"
+					}
+				}
+			],
+			"analysis": {
+				"state": "not_affected",
+				"justification": "code_not_present",
+				"detail": "The package is replaced in production builds.",
+				"firstIssued": "2026-10-02T10:15:00Z",
+				"lastUpdated": "2026-10-03T10:15:00Z"
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				},
+				{
+					"ref": "psr7"
+				}
+			],
+			"properties": [
+				{
+					"name": "mteu:vex:justification",
+					"value": "component_not_present"
+				}
+			]
+		},
+		{
+			"id": "PKSA-0004-0004-0004",
+			"analysis": {
+				"state": "false_positive",
+				"justification": "code_not_reachable",
+				"response": [
+					"will_not_fix"
+				],
+				"detail": "The advisory names another package of the same name.",
+				"firstIssued": "2026-10-02T10:15:00Z"
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "CVE-2026-0005",
+			"analysis": {
+				"state": "resolved_with_pedigree",
+				"detail": "Patched in our fork.",
+				"firstIssued": "2026-10-02T10:15:00Z"
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "CVE-2026-0006",
+			"analysis": {
+				"state": "resolved",
+				"detail": "Backported fix.",
+				"firstIssued": "2026-10-02T10:15:00Z"
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "CVE-2026-0007",
+			"analysis": {
+				"state": "in_triage",
+				"firstIssued": "2026-10-02T10:15:00Z"
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "CVE-2026-0008",
+			"ratings": [
+				{
+					"severity": "medium"
+				}
+			],
+			"analysis": {
+				"state": "exploitable",
+				"response": [
+					"rollback"
+				],
+				"detail": "Rolling back to the last release before the regression.",
+				"firstIssued": "2026-10-02T10:15:00Z"
+			},
+			"affects": [
+				{
+					"ref": "psr7"
+				}
+			],
+			"properties": [
+				{
+					"name": "mteu:vex:accepted_severity",
+					"value": "critical"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,92 @@
+{
+	"bomFormat": "CycloneDX",
+	"specVersion": "1.4",
+	"serialNumber": "urn:uuid:3e671687-395b-41f5-a30f-a58921a69b79",
+	"version": 1,
+	"metadata": {
+		"timestamp": "2026-09-15T08:00:00Z",
+		"tools": [
+			{
+				"vendor": "Example",
+				"name": "vex-tool",
+				"version": "1.0.0"
+			}
+		]
+	},
+	"components": [
+		{
+			"type": "library",
+			"bom-ref": "pkg:composer/symfony/http-kernel@5.4.19",
+			"group": "symfony",
+			"name": "http-kernel",
+			"version": "5.4.19",
+			"purl": "pkg:composer/symfony/http-kernel@5.4.19"
+		},
+		{
+			"type": "library",
+			"bom-ref": "widgets",
+			"group": "@acme",
+			"name": "widgets",
+			"version": "2.1.0",
+			"purl": "pkg:npm/%40acme/widgets@2.1.0"
+		}
+	],
+	"vulnerabilities": [
+		{
+			"id": "CVE-2026-1234",
+			"source": {
+				"name": "NVD",
+				"url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1234"
+			},
+			"ratings": [
+				{
+					"source": {
+						"name": "NVD"
+					},
+					"score": 5.3,
+					"severity": "medium",
+					"method": "CVSSv31"
+				},
+				{
+					"source": {
+						"name": "GitHub"
+					},
+					"severity": "high",
+					"method": "other"
+				},
+				{
+					"severity": "info"
+				}
+			],
+			"analysis": {
+				"state": "exploitable",
+				"response": [
+					"update",
+					"will_not_fix"
+				],
+				"detail": "Upgrading with the next release."
+			},
+			"affects": [
+				{
+					"ref": "pkg:composer/symfony/http-kernel@5.4.19"
+				}
+			]
+		},
+		{
+			"id": "GHSA-abcd-efgh-ijkl",
+			"source": {
+				"name": "GitHub"
+			},
+			"analysis": {
+				"state": "not_affected",
+				"justification": "requires_configuration",
+				"detail": "Only reachable with the legacy renderer, which is off."
+			},
+			"affects": [
+				{
+					"ref": "widgets"
+				}
+			]
+		}
+	]
+}

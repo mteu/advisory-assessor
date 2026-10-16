@@ -1,0 +1,3 @@
+coverage/
+infection/
+.phpunit.result.cache
