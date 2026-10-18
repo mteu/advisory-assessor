@@ -166,16 +166,16 @@
         },
         {
             "name": "mteu/advisory-matcher",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mteu/advisory-matcher.git",
-                "reference": "209bd715a19ce86d487f295bb29df88fe04d6b7e"
+                "reference": "8460dabad10b61034680cc6daf7c5b4b7caae173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mteu/advisory-matcher/zipball/209bd715a19ce86d487f295bb29df88fe04d6b7e",
-                "reference": "209bd715a19ce86d487f295bb29df88fe04d6b7e",
+                "url": "https://api.github.com/repos/mteu/advisory-matcher/zipball/8460dabad10b61034680cc6daf7c5b4b7caae173",
+                "reference": "8460dabad10b61034680cc6daf7c5b4b7caae173",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
                 "security": "https://github.com/mteu/advisory-matcher/security/policy",
                 "source": "https://github.com/mteu/advisory-matcher"
             },
-            "time": "2026-10-16T12:58:07+00:00"
+            "time": "2026-10-17T11:08:12+00:00"
         },
         {
             "name": "mteu/sbom-parser",
