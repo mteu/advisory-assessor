@@ -34,7 +34,7 @@
 		"ergebnis/composer-normalize": "2.54.0",
 		"ergebnis/phpstan-rules": "2.13.1",
 		"friendsofphp/php-cs-fixer": "3.95.27",
-		"infection/infection": "0.35.5",
+		"infection/infection": "0.35.8",
 		"justinrainbow/json-schema": "6.13.1",
 		"phpstan/extension-installer": "1.4.3",
 		"phpstan/phpstan": "2.2.1",
