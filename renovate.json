@@ -13,11 +13,6 @@
 			"matchDepTypes": [
 				"require-dev"
 			],
-			"matchPackageNames": [
-				"*",
-				"!justinrainbow/json-schema",
-				"!phpunit/**"
-			],
 			"rangeStrategy": "pin",
 			"automerge": true,
 			"automergeType": "pr"
