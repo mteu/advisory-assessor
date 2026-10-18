@@ -13,6 +13,9 @@
 			"matchDepTypes": [
 				"require-dev"
 			],
+			"matchPackageNames": [
+				"!phpunit/**"
+			],
 			"rangeStrategy": "pin",
 			"automerge": true,
 			"automergeType": "pr"
