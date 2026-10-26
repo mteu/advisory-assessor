@@ -366,7 +366,7 @@ final readonly class CycloneDxVexWriter
     {
         return match ($id->kind) {
             IdentityKind::Cve => ['name' => 'NVD', 'url' => 'https://nvd.nist.gov/vuln/detail/' . rawurlencode($id->id)],
-            IdentityKind::Ghsa => ['name' => 'GitHub', 'url' => 'https://github.com/advisories/' . rawurlencode($id->id)],
+            IdentityKind::Ghsa => ['name' => 'GITHUB', 'url' => 'https://github.com/advisories/' . rawurlencode($id->id)],
             IdentityKind::Native, IdentityKind::Hash => [],
         };
     }

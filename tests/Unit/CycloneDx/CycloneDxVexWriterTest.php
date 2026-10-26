@@ -299,7 +299,7 @@ final class CycloneDxVexWriterTest extends TestCase
         self::assertSame(self::CVE, $vulnerability['id']);
         self::assertSame(['name' => 'NVD', 'url' => 'https://nvd.nist.gov/vuln/detail/' . self::CVE], $vulnerability['source']);
         self::assertSame(
-            [['id' => self::GHSA, 'source' => ['name' => 'GitHub', 'url' => 'https://github.com/advisories/' . self::GHSA]]],
+            [['id' => self::GHSA, 'source' => ['name' => 'GITHUB', 'url' => 'https://github.com/advisories/' . self::GHSA]]],
             $vulnerability['references'],
         );
     }
@@ -314,7 +314,7 @@ final class CycloneDxVexWriterTest extends TestCase
         ));
 
         self::assertSame(self::GHSA, $vulnerability['id']);
-        self::assertSame(['name' => 'GitHub', 'url' => 'https://github.com/advisories/' . self::GHSA], $vulnerability['source']);
+        self::assertSame(['name' => 'GITHUB', 'url' => 'https://github.com/advisories/' . self::GHSA], $vulnerability['source']);
         self::assertArrayNotHasKey('references', $vulnerability);
     }
 
@@ -602,7 +602,7 @@ final class CycloneDxVexWriterTest extends TestCase
                     {
                         "id": "GHSA-jfh8-c2jp-5v3q",
                         "source": {
-                            "name": "GitHub",
+                            "name": "GITHUB",
                             "url": "https://github.com/advisories/GHSA-jfh8-c2jp-5v3q"
                         }
                     }
