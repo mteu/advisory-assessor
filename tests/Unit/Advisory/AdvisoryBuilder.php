@@ -63,6 +63,7 @@ final class AdvisoryBuilder
             Ecosystem::Npm => PackageUrl::fromPackageName('npm', $packageName),
             Ecosystem::Php => PackageUrl::fromString('pkg:generic/php'),
             Ecosystem::Unknown => PackageUrl::fromPackageName('pypi', $packageName),
+            Ecosystem::Platform => PackageUrl::fromString('pkg:generic/' . $packageName),
         };
     }
 }

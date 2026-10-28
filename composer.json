@@ -25,7 +25,7 @@
 	},
 	"require": {
 		"php": "~8.3.0 || ~8.4.0 || ~8.5.0",
-		"mteu/advisory-matcher": "^0.2",
+		"mteu/advisory-matcher": "^0.3",
 		"mteu/sbom-parser": "^0.6",
 		"psr/clock": "^1.0"
 	},
