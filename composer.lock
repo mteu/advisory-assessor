@@ -236,16 +236,16 @@
         },
         {
             "name": "mteu/sbom-parser",
-            "version": "0.6.0",
+            "version": "0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mteu/sbom-parser.git",
-                "reference": "e36799cf6487ac841ca828590a722980e30bbc9f"
+                "reference": "b1aac2a1caa237eb47bfb8316e5e969be030db4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mteu/sbom-parser/zipball/e36799cf6487ac841ca828590a722980e30bbc9f",
-                "reference": "e36799cf6487ac841ca828590a722980e30bbc9f",
+                "url": "https://api.github.com/repos/mteu/sbom-parser/zipball/b1aac2a1caa237eb47bfb8316e5e969be030db4c",
+                "reference": "b1aac2a1caa237eb47bfb8316e5e969be030db4c",
                 "shasum": ""
             },
             "require": {
@@ -282,9 +282,9 @@
             "description": "Type-safe parser for CycloneDX Software Bill of Materials (SBOM) JSON files",
             "support": {
                 "issues": "https://github.com/mteu/sbom-parser/issues",
-                "source": "https://github.com/mteu/sbom-parser/tree/0.6.0"
+                "source": "https://github.com/mteu/sbom-parser/tree/0.6.1"
             },
-            "time": "2026-10-09T08:56:22+00:00"
+            "time": "2026-10-28T21:14:35+00:00"
         },
         {
             "name": "package-url/packageurl-php",
