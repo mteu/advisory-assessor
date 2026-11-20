@@ -24,7 +24,7 @@
 		"security": "https://github.com/mteu/advisory-assessor/security/policy"
 	},
 	"require": {
-		"php": "~8.3.0 || ~8.4.0 || ~8.5.0",
+		"php": "~8.6.0",
 		"mteu/advisory-matcher": "^0.3",
 		"mteu/sbom-parser": "^0.6",
 		"psr/clock": "^1.0"
